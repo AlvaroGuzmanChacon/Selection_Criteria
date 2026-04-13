@@ -70,7 +70,7 @@ Where
 The `datasets` folder has the datasets contains the manifest.zip files in the `Manifests` folder, along with a test dataset in the `test_influenzaA` folder. The `test_influenzaA` containts 10 compressed .fna files from the Influenza A GenBank dataset. These files are listed in the `test_influeza_filelist.txt` text file. To test the `build_sketch` or `selection.cpp` we can use this test datasets. Let's consider the next example:
 ```
 ./build/build_sketch -l test_influeza_filelist.txt -t 8 -a 256 -c hll_an
-./build/selection -l test_influeza_filelist.txt -t 8 nthreads -h 0.8 -a 256 -c hll_an > results.txt
+./build/selection -l test_influeza_filelist.txt -t 8 -h 0.8 -a 256 -c hll_an > results.txt
 ```
 The first command would create the hll sketches of 256 bytes associated with the files specified in `test_influeza_filelist.txt`, using 8 threads. Then, the second command would use the `hll_an` criterion to try and find the pairs of sequences (between the 10 sequences on `test_influeza_filelist.txt`) with a Jaccard similarity greater than or equal to 0.8, using 8 threads and using the hll sketches of 256 bytes previously constructed.
 
