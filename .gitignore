@@ -1,1 +1,18 @@
+# Archivos excluidos manualmente
 src/baseline.cpp
+
+# Compilación
+build/
+
+# Sketches generados por build_sketch (junto a los .fna.gz)
+# HLL principal y auxiliar (hll_a / hll_an): .hll, .hll_8, ...
+*.hll
+*.hll_*
+# SuperMinHash (smh_a): .smh32, .smh_m, ...
+*.smh*
+
+# Librería Sketch clonada dentro del repo (ver README)
+sketch/
+
+# Resultados de selection
+results*.txt
